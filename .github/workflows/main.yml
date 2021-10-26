@@ -2,7 +2,7 @@ name: Build and Deploy Gatsby Blog
 
 on: 
    repository_dispatch:
-      types: re-prod-deploy
+      types: [re-prod-deploy]
 
 jobs:
   build:

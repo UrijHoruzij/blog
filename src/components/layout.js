@@ -1,49 +1,88 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.com/docs/use-static-query/
- */
-
 import * as React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-
-import Header from "./header"
+import { HeaderNav, Header, Footer, Sidebar, Main, Container } from "./"
+import styled from "styled-components"
+import "normalize.css"
+import "@wordpress/block-library/build-style/style.css"
 import "./layout.css"
+
+const Wrapper = styled.div`
+  display: grid;
+  grid-template-areas: "main sidebar";
+  grid-template-rows: 1fr;
+  grid-template-columns: 8fr 4fr;
+  grid-gap: 16px;
+  margin-top: 24px;
+`
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
+    query LayoutQuery {
+      photo: file(relativePath: { eq: "photo.png" }) {
+        childImageSharp {
+          gatsbyImageData(placeholder: BLURRED, width: 200, height: 200)
+        }
+      }
       site {
         siteMetadata {
-          title
+          author
+          descriptionAuthor
+        }
+      }
+      wpgraphql {
+        menuItems {
+          nodes {
+            path
+            label
+            id
+          }
+        }
+        posts(last: 3) {
+          nodes {
+            id
+            slug
+            title
+            featuredImage {
+              node {
+                sourceUrl
+                imageFile {
+                  childImageSharp {
+                    gatsbyImageData(placeholder: BLURRED, height: 255)
+                  }
+                }
+              }
+            }
+          }
+        }
+        mediaItems(last: 9) {
+          nodes {
+            imageFile {
+              childImageSharp {
+                gatsbyImageData(placeholder: BLURRED, height: 255)
+              }
+            }
+            sourceUrl
+            altText
+            id
+          }
         }
       }
     }
   `)
-
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
-        <main>{children}</main>
-        <footer
-          style={{
-            marginTop: `2rem`,
-          }}
-        >
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
-        </footer>
-      </div>
+      <Container>
+        <HeaderNav data={data} />
+      </Container>
+      <Header data={data} />
+      <Container>
+        <Wrapper>
+          <Main>{children}</Main>
+          <Sidebar data={data} />
+        </Wrapper>
+      </Container>
+      <Footer siteTitle={data.site.siteMetadata.author} />
     </>
   )
 }

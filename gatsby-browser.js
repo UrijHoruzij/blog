@@ -6,7 +6,7 @@ import ApolloClient from "apollo-boost"
 export const wrapRootElement = ({ element }) => {
   const client = new ApolloClient({
     fetch,
-    uri: "http://helenste.hostronavt.ru/graphql",
+    uri: "https://urij.insomnia247.nl/wordpress/graphql",
   })
 
   return <ApolloProvider client={client}>{element}</ApolloProvider>

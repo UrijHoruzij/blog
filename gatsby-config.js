@@ -35,7 +35,7 @@ module.exports = {
       options: {
         typeName: "WPGraphQL",
         fieldName: "wpgraphql",
-        url: "http://helenste.hostronavt.ru/graphql",
+        url: "https://urij.insomnia247.nl/wordpress/graphql",
       },
     },
   ],

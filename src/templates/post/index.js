@@ -14,8 +14,8 @@ const Post = ({ pageContext }) => {
       )}
       <h1>{post.title}</h1>
       {post.content && <div>{parse(post.content)}</div>}
-      <CommentForm postId={post.postId}></CommentForm>
-      <CommentList postId={post.postId}></CommentList>
+      {/* <CommentForm postId={post.postId}></CommentForm>
+      <CommentList postId={post.postId}></CommentList> */}
     </Layout>
   )
 }

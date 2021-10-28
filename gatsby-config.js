@@ -30,12 +30,20 @@ module.exports = {
     },
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-offline`,
+    // {
+    //   resolve: "gatsby-source-graphql",
+    //   options: {
+    //     typeName: "WPGraphQL",
+    //     fieldName: "wpgraphql",
+    //     url: "http://wp.loc/graphql",
+    //   },
+    // },
     {
       resolve: "gatsby-source-graphql",
       options: {
         typeName: "WPGraphQL",
         fieldName: "wpgraphql",
-        url: "http://wp.loc/graphql",
+        url: "http://helen.insomnia247.nl/graphql",
       },
     },
   ],

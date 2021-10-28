@@ -1,0 +1,11 @@
+[33mcommit 0f29bb1651b5d0c2fac2ac1e293ad3008925c576[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: Юрий Хоружий <urijhoruzij@gmail.com>
+Date:   Tue Oct 26 20:01:16 2021 +0300
+
+    Init blog
+
+[33mcommit 3a7df5b6be740bbe75b69b8ba42ddf06804a77d2[m
+Author: Юрий Хоружий <urijhoruzij@gmail.com>
+Date:   Sat Oct 16 13:23:37 2021 +0300
+
+    Initial commit from gatsby: (https://github.com/gatsbyjs/gatsby-starter-default.git)

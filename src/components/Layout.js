@@ -1,7 +1,7 @@
 import * as React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-import { HeaderNav, Header, Footer, Sidebar, Main, Container } from "./"
+import { HeaderNav, Header, Footer, Sidebar, Main, Container, config } from "./"
 import styled from "styled-components"
 import "normalize.css"
 import "@wordpress/block-library/build-style/style.css"
@@ -14,6 +14,37 @@ const Wrapper = styled.div`
   grid-template-columns: 8fr 4fr;
   grid-gap: 16px;
   margin-top: 24px;
+  overflow-x: hidden;
+  @media ${config.breakpoints.xs} {
+    grid-template-areas:
+      "main"
+      "sidebar";
+    grid-template-columns: 12fr;
+  }
+  @media ${config.breakpoints.sm} {
+    grid-template-areas:
+      "main"
+      "sidebar";
+    grid-template-columns: 12fr;
+  }
+  @media ${config.breakpoints.md} {
+    grid-template-areas:
+      "main"
+      "sidebar";
+    grid-template-columns: 12fr;
+  }
+  @media ${config.breakpoints.lg} {
+    grid-template-areas: "main sidebar";
+    grid-template-columns: 8fr 4fr;
+  }
+  @media ${config.breakpoints.xl} {
+    grid-template-areas: "main sidebar";
+    grid-template-columns: 8fr 4fr;
+  }
+  @media ${config.breakpoints.xxl} {
+    grid-template-areas: "main sidebar";
+    grid-template-columns: 8fr 4fr;
+  }
 `
 
 const Layout = ({ children }) => {

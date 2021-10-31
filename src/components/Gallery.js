@@ -17,7 +17,7 @@ const Gallery = ({ data }) => {
     <GalleryWrapper>
       {data.wpgraphql.mediaItems.nodes.map(image => {
         let item = getImage(image.imageFile)
-        return <GalleryItem key={item.id} image={item} alt={item.altText} />
+        return <GalleryItem key={image.id} image={item} alt={image.altText} />
       })}
     </GalleryWrapper>
   )

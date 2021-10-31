@@ -18,7 +18,6 @@ const changeType = type => {
   }
 }
 const changeTypeImage = type => {
-  console.log(type)
   if (type === 2) {
     return css`
       justify-content: space-between;
@@ -27,19 +26,45 @@ const changeTypeImage = type => {
 }
 const CardWrapper = styled.div`
   display: flex;
-
   margin-bottom: 32px;
   ${props => changeTypeImage(props.type)};
+  @media ${config.breakpoints.xs} {
+    align-items: center;
+    flex-direction: column;
+  }
+  @media ${config.breakpoints.md} {
+    flex-direction: row;
+  }
 `
 const Content = styled.div`
   display: flex;
   flex-direction: column;
   ${props => changeType(props.type)};
+  @media ${config.breakpoints.xs} {
+    margin-top: 16px;
+    margin-bottom: 16px;
+  }
+  @media ${config.breakpoints.md} {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
 `
 const Image = styled(GatsbyImage)`
   width: 100%;
   max-height: 255px;
   max-width: 255px;
+  @media ${config.breakpoints.xs} {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    max-height: 255px;
+    max-width: 100%;
+  }
+  @media ${config.breakpoints.md} {
+    width: 100%;
+    max-height: 255px;
+    max-width: 255px;
+  }
 `
 const CardTitle = styled(Link)`
   font-family: ${config.fontSerif};
@@ -50,7 +75,9 @@ const CardTitle = styled(Link)`
   margin: 0;
   display: flex;
   flex-direction: column;
+  display: -webkit-box;
   -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
   overflow: hidden;
   text-decoration: none;
 `
@@ -71,8 +98,13 @@ const CardContent = styled.p`
   line-height: 24px;
   display: flex;
   flex-direction: column;
+  display: -webkit-box;
   -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
   overflow: hidden;
+  p {
+    margin: 0;
+  }
 `
 const CardLink = styled(Link)`
   text-decoration: none;

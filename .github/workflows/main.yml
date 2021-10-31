@@ -1,6 +1,9 @@
 name: Build and Deploy Gatsby Blog
 
 on:
+  push:
+    branches:
+      - master
   repository_dispatch:
     types: [re-prod-deploy]
 

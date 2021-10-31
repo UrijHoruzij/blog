@@ -39,7 +39,7 @@ const Line = styled.div`
 const Profile = ({ data }) => {
   return (
     <ProfileWrapper>
-      <Photo image={getImage(data.photo)} />
+      <Photo image={getImage(data.photo)} alt={data.site.siteMetadata.author} />
       <ProfileName>{data.site.siteMetadata.author}</ProfileName>
       <ProfileDescription>
         {data.site.siteMetadata.descriptionAuthor}

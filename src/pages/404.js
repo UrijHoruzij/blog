@@ -1,11 +1,19 @@
 import * as React from "react"
-
+import styled from "styled-components"
 import { Layout, Seo } from "../components/"
+
+const Title = styled.h1`
+  font-family: ${config.fontSerif};
+  font-size: 24px;
+  font-weight: 700;
+  color: ${config.black};
+  line-height: 32px;
+`
 
 const NotFoundPage = () => (
   <Layout>
-    <Seo title="404: Not found" />
-    <h1>404: Not Found</h1>
+    <Seo title="404: Страница не найдена" />
+    <Title>404: Страница не найдена</Title>
   </Layout>
 )
 

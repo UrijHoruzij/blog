@@ -60,7 +60,6 @@ class CommentForm extends React.Component {
         {addComment => (
           <form
             onSubmit={event => {
-              // Prevent default form submit behavior.
               event.preventDefault()
               this.setState({ commentStatus: "loading" })
               addComment({
@@ -106,7 +105,6 @@ class CommentForm extends React.Component {
   }
 
   render() {
-    // Check comment status from component state and display messages or form.
     switch (this.state.commentStatus) {
       case "success":
         return "Your comment has been successfully submitted."

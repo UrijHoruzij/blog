@@ -1,6 +1,6 @@
 import * as React from "react"
 import styled from "styled-components"
-import { Layout, Seo } from "../components/"
+import { Layout, Seo, config } from "../components/"
 
 const Title = styled.h1`
   font-family: ${config.fontSerif};

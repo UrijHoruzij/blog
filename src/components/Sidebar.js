@@ -14,7 +14,7 @@ const Sidebar = ({ data, name, description }) => {
     <SidebarWrapper>
       <Profile data={data} />
       <LastPosts data={data} />
-      <Gallery data={data} />
+      {/* <Gallery data={data} /> */}
     </SidebarWrapper>
   )
 }

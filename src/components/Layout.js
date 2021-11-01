@@ -86,21 +86,21 @@ const Layout = ({ children }) => {
             }
           }
         }
-        mediaItems(last: 9) {
-          nodes {
-            imageFile {
-              childImageSharp {
-                gatsbyImageData(placeholder: BLURRED, height: 255)
-              }
-            }
-            sourceUrl
-            altText
-            id
-          }
-        }
       }
     }
   `)
+  // mediaItems(last: 9) {
+  //   nodes {
+  //     imageFile {
+  //       childImageSharp {
+  //         gatsbyImageData(placeholder: BLURRED, height: 255)
+  //       }
+  //     }
+  //     sourceUrl
+  //     altText
+  //     id
+  //   }
+  // }
   return (
     <>
       <Container>

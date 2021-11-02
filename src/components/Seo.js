@@ -33,6 +33,12 @@ function Seo({ description, lang, meta, title }) {
           content: metaDescription,
         },
         {
+          name: `keywords`,
+          content:
+            "ЛНР, учитель физики, Хоружая Елена Степановна, Елена Хоружая, старший учитель, Брянка, Брянковский УВК №17, заместитель директора по учебно-воспитательной работе, заместитель директора",
+        },
+
+        {
           property: `og:title`,
           content: title,
         },

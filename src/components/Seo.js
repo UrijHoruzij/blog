@@ -33,11 +33,18 @@ function Seo({ description, lang, meta, title }) {
           content: metaDescription,
         },
         {
+          name: "yandex-verification",
+          content: "bb3ce2ae58ece98e",
+        },
+        {
+          name: "google-site-verification",
+          content: "9pUYNhjfrnGyQfEr_B3W_6Nr0JgOzfH4RDOAzi4a-F0",
+        },
+        {
           name: `keywords`,
           content:
             "ЛНР, учитель физики, Хоружая Елена Степановна, Елена Хоружая, старший учитель, Брянка, Брянковский УВК №17, заместитель директора по учебно-воспитательной работе, заместитель директора",
         },
-
         {
           property: `og:title`,
           content: title,

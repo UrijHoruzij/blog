@@ -15,7 +15,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
         with:
-          node-version: 12
+          node-version: 14
 
       - name: Yarn cache directory
         id: yarn-cache-dir
@@ -61,9 +61,9 @@ jobs:
       - name: Deploy to Netlify
         uses: nwtgck/actions-netlify@v1.0
         with:
-          publish-dir: "./public"
+          publish-dir: './public'
           production-branch: master
-          deploy-message: "Deploy from GitHub Actions"
+          deploy-message: 'Deploy from GitHub Actions'
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}

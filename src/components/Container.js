@@ -1,32 +1,32 @@
-import React from "react"
-import { config } from "./"
-import styled from "styled-components"
+import React from 'react';
+import { Config } from './';
+import styled from 'styled-components';
 
 const ContainerBlock = styled.div`
-  margin: 0 auto;
-  width: 100%;
-  @media ${config.breakpoints.xs} {
-    max-width: 100%;
-  }
-  @media ${config.breakpoints.sm} {
-    ${config.container.sm}
-  }
-  @media ${config.breakpoints.md} {
-    ${config.container.md}
-  }
-  @media ${config.breakpoints.lg} {
-    ${config.container.lg}
-  }
-  @media ${config.breakpoints.xl} {
-    ${config.container.xl}
-  }
-  @media ${config.breakpoints.xxl} {
-    ${config.container.xxl}
-  } ;
-`
+	margin: 0 auto;
+	width: 100%;
+	@media ${Config.breakpoints.xs} {
+		max-width: 100%;
+	}
+	@media ${Config.breakpoints.sm} {
+		${Config.container.sm}
+	}
+	@media ${Config.breakpoints.md} {
+		${Config.container.md}
+	}
+	@media ${Config.breakpoints.lg} {
+		${Config.container.lg}
+	}
+	@media ${Config.breakpoints.xl} {
+		${Config.container.xl}
+	}
+	@media ${Config.breakpoints.xxl} {
+		${Config.container.xxl}
+	} ;
+`;
 
 const Container = ({ children }) => {
-  return <ContainerBlock>{children}</ContainerBlock>
-}
+	return <ContainerBlock>{children}</ContainerBlock>;
+};
 
-export default Container
+export default Container;

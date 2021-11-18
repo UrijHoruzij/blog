@@ -1,6 +1,6 @@
 const Config = {
 	grey: '#eaeaea',
-	darkgrey: '#с4с4с4',
+	darkgrey: '#C4C4C4',
 	black: '#333333',
 	fontLogo: 'Caveat',
 	fontSans: 'PT Sans',

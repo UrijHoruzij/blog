@@ -12,5 +12,5 @@ export { default as Layout } from './Layout';
 export { default as Profile } from './Profile';
 export { default as Pagination } from './Pagination';
 export { default as LastPosts } from './LastPosts';
-export { default as CommentForm } from './Comment-form';
-export { default as CommentList } from './Comment-list';
+export { default as CommentForm } from './CommentForm';
+export { default as CommentsList } from './CommentsList';

@@ -2,7 +2,7 @@ import React from 'react';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import parse from 'html-react-parser';
 import styled from 'styled-components';
-import { Layout, CommentForm, CommentList, Seo, Config } from '../../components/';
+import { Layout, CommentForm, CommentsList, Seo, Config } from '../../components/';
 import { dateFormat } from '../../utils';
 
 const Title = styled.h1`
@@ -73,9 +73,11 @@ const Content = styled.div`
 	}
 	@media ${Config.breakpoints.xs} {
 		margin: auto 8px;
+		margin-top: 8px;
 	}
 	@media ${Config.breakpoints.sm} {
 		margin: 0;
+		margin-top: 8px;
 	}
 `;
 
@@ -93,8 +95,8 @@ const Post = ({ pageContext }) => {
 				<Title>{post.title}</Title>
 				<DateArticle>{dateFormat(post.date)}</DateArticle>
 				{post.content && <Content>{parse(post.content)}</Content>}
-				{/* <CommentForm postId={post.postId}></CommentForm>
-        <CommentList postId={post.postId}></CommentList> */}
+				<CommentsList postId={post.postId}></CommentsList>
+				<CommentForm postId={post.postId}></CommentForm>
 			</Article>
 		</Layout>
 	);

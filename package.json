@@ -5,6 +5,7 @@
   "version": "0.3.0",
   "author": "Urij Horuzij",
   "dependencies": {
+    "@apollo/client": "^3.3.21",
     "@wordpress/block-library": "^6.0.5",
     "apollo-boost": "^0.4.9",
     "babel-plugin-styled-components": "^1.13.3",

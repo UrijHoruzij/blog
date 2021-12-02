@@ -13,6 +13,7 @@ const Photo = styled(GatsbyImage)`
 	max-height: 200px;
 	width: 100%;
 	height: 100%;
+	border-radius: 50%;
 `;
 const ProfileName = styled.span`
 	margin-top: 16px;

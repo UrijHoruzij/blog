@@ -7,11 +7,11 @@ const Config = {
 	fontSerif: 'PT Serif',
 
 	container: {
-		sm: `max-width: 540px`,
-		md: `max-width: 720px`,
-		lg: `max-width: 960px`,
-		xl: `max-width: 1140px`,
-		xxl: `max-width: 1320px`,
+		sm: `max-width: 540px;`,
+		md: `max-width: 720px;`,
+		lg: `max-width: 960px;`,
+		xl: `max-width: 1140px;`,
+		xxl: `max-width: 1320px;`,
 	},
 	breakpoints: {
 		xs: `(min-width: 0)`,

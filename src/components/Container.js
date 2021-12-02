@@ -7,9 +7,11 @@ const ContainerBlock = styled.div`
 	width: 100%;
 	@media ${Config.breakpoints.xs} {
 		max-width: 100%;
+		margin: 0 8px;
 	}
 	@media ${Config.breakpoints.sm} {
 		${Config.container.sm}
+		margin: 0 auto;
 	}
 	@media ${Config.breakpoints.md} {
 		${Config.container.md}

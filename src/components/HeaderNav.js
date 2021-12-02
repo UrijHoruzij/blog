@@ -3,6 +3,18 @@ import { Link } from 'gatsby';
 import styled, { css } from 'styled-components';
 import { Config } from './';
 
+const checkEmpty = (items) => {
+	if (items) {
+		return css`
+			display: flex; ;
+		`;
+	} else {
+		return css`
+			display: none;
+		`;
+	}
+};
+
 const HeaderWrapper = styled.header`
 	display: flex;
 	flex-direction: column;
@@ -68,6 +80,7 @@ const MenuLink = styled(Link)`
 const Hamburger = styled.div`
 	display: none;
 	position: relative;
+	${(props) => checkEmpty(props.items)}
 	@media ${Config.breakpoints.xs} {
 		display: flex;
 		justify-content: space-between;
@@ -149,7 +162,7 @@ const HeaderNav = ({ data }) => {
 						: null}
 				</HeaderMenu>
 				{data.wpgraphql.menuItems.nodes && (
-					<Hamburger open={open} onClick={() => setOpen(!open)}>
+					<Hamburger items={data.wpgraphql.menuItems.nodes} open={open} onClick={() => setOpen(!open)}>
 						<HamburgerLine open={open} />
 						<HamburgerLine open={open} />
 						<HamburgerLine open={open} />

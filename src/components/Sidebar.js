@@ -9,7 +9,7 @@ const SidebarWrapper = styled.aside`
 	align-items: center;
 `;
 
-const Sidebar = ({ data, name, description }) => {
+const Sidebar = ({ data }) => {
 	return (
 		<SidebarWrapper>
 			<Profile data={data} />

@@ -69,7 +69,7 @@ const Layout = ({ children }) => {
 						id
 					}
 				}
-				posts(last: 3) {
+				posts(first: 3) {
 					nodes {
 						id
 						slug

@@ -29,7 +29,6 @@ const CardWrapper = styled.div`
 	margin-bottom: 32px;
 	${(props) => changeTypeImage(props.type)};
 	@media ${Config.breakpoints.xs} {
-		align-items: center;
 		flex-direction: column;
 	}
 	@media ${Config.breakpoints.md} {
@@ -129,35 +128,39 @@ const CardLink = styled(Link)`
 const Card = ({ post, featuredImage, date, type }) => {
 	if (type === 1) {
 		return (
-			<CardWrapper itemscope itemtype="http://schema.org/Thing" type={type}>
-				{featuredImage && <Image itemprop="image" image={featuredImage} alt={post.title} />}
-				<Content>
-					<CardTitle itemprop="name" to={`/${post.slug}/`}>
-						{post.title}
-					</CardTitle>
-					<CardDate>{date}</CardDate>
-					<CardContent itemprop="description">{parse(post.excerpt)}</CardContent>
-					<CardLink itemprop="url" to={`/${post.slug}/`}>
-						Читать дальше
-					</CardLink>
-				</Content>
-			</CardWrapper>
+			<>
+				<CardWrapper itemscope itemtype="http://schema.org/Thing" type={type}>
+					{featuredImage && <Image itemprop="image" image={featuredImage} alt={post.title} />}
+					<Content>
+						<CardTitle itemprop="name" to={`/${post.slug}/`}>
+							{post.title}
+						</CardTitle>
+						<CardDate>{date}</CardDate>
+						<CardContent itemprop="description">{parse(post.excerpt)}</CardContent>
+						<CardLink itemprop="url" to={`/${post.slug}/`}>
+							Читать дальше
+						</CardLink>
+					</Content>
+				</CardWrapper>
+			</>
 		);
 	} else {
 		return (
-			<CardWrapper itemscope itemtype="http://schema.org/Thing" type={type}>
-				<Content>
-					<CardTitle itemprop="name" to={`/${post.slug}/`}>
-						{post.title}
-					</CardTitle>
-					<CardDate>{date}</CardDate>
-					<CardContent itemprop="description">{parse(post.excerpt)}</CardContent>
-					<CardLink itemprop="url" to={`/${post.slug}/`}>
-						Читать дальше
-					</CardLink>
-				</Content>
-				{featuredImage && <Image itemprop="image" image={featuredImage} alt={post.title} />}
-			</CardWrapper>
+			<>
+				<CardWrapper itemscope itemtype="http://schema.org/Thing" type={type}>
+					<Content>
+						<CardTitle itemprop="name" to={`/${post.slug}/`}>
+							{post.title}
+						</CardTitle>
+						<CardDate>{date}</CardDate>
+						<CardContent itemprop="description">{parse(post.excerpt)}</CardContent>
+						<CardLink itemprop="url" to={`/${post.slug}/`}>
+							Читать дальше
+						</CardLink>
+					</Content>
+					{featuredImage && <Image itemprop="image" image={featuredImage} alt={post.title} />}
+				</CardWrapper>
+			</>
 		);
 	}
 };

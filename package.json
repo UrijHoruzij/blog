@@ -2,7 +2,7 @@
   "name": "gatsby-starter-default",
   "private": true,
   "description": "",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "author": "Urij Horuzij",
   "dependencies": {
     "@apollo/client": "^3.3.21",

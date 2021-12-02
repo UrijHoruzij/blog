@@ -22,6 +22,7 @@ const ProfileName = styled.span`
 	font-weight: 700;
 	color: ${Config.black};
 	line-height: 32px;
+	text-align: center;
 `;
 const ProfileDescription = styled.span`
 	margin-top: 4px;

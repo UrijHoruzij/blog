@@ -21,7 +21,7 @@ const Author = styled.div`
 	font-weight: 700;
 	line-height: 64px;
 	margin-bottom: 8px;
-	color: ${Config.black};
+	color: ${Config.orange};
 	@media ${Config.breakpoints.xs} {
 		font-size: 36px;
 		line-height: 48px;

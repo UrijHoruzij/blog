@@ -50,7 +50,7 @@ const Wrapper = styled.div`
 const Layout = ({ children }) => {
 	const data = useStaticQuery(graphql`
 		query LayoutQuery {
-			photo: file(relativePath: { eq: "photo.png" }) {
+			photo: file(relativePath: { eq: "photo2.jpg" }) {
 				childImageSharp {
 					gatsbyImageData(placeholder: BLURRED, width: 200, height: 200)
 				}

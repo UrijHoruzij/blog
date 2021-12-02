@@ -3,7 +3,7 @@ module.exports = {
 		title: `Елена Хоружая`,
 		description: `Личный сайт учителя физики Хоружей Елены Степановны.`,
 		author: `Елена Хоружая`,
-		descriptionAuthor: 'учитель физики, старший учитель',
+		descriptionAuthor: 'учитель физики высшей квалификационной категории, старший учитель',
 		siteUrl: 'https://elenahoruzaya.netlify.app/',
 	},
 	plugins: [

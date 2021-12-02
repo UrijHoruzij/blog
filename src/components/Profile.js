@@ -16,15 +16,12 @@ const Photo = styled(GatsbyImage)`
 	border-radius: 50%;
 `;
 const ProfileName = styled.span`
-	text-align: center;
-	max-width: 90%;
 	margin-top: 16px;
 	font-family: ${Config.fontSerif};
 	font-size: 24px;
 	font-weight: 700;
 	color: ${Config.black};
 	line-height: 32px;
-	
 `;
 const ProfileDescription = styled.span`
 	margin-top: 4px;
@@ -33,6 +30,8 @@ const ProfileDescription = styled.span`
 	font-weight: 400;
 	color: ${Config.black};
 	line-height: 20px;
+	text-align: center;
+	max-width: 90%;
 `;
 const Line = styled.div`
 	width: 72px;

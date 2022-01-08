@@ -86,7 +86,18 @@ const Page = ({ pageContext }) => {
 	}
 	return (
 		<Layout>
-			<Seo title={page.title} />
+			<Seo title={page.title}>
+				<script type="application/ld+json">
+					{`{
+				"@context": "https://schema.org/",
+				"@type": "Thing",
+				"name": ${page.title},
+				"image": ${featuredImageUrl},
+				"description": ${page.excerpt},
+				"url": /${page.slug}/
+				}`}
+				</script>
+			</Seo>
 			<Article>
 				{page.featuredImage && <FeaturedImage image={featuredImageUrl} alt={page.title} />}
 				<Title>{page.title}</Title>

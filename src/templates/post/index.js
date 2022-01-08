@@ -89,7 +89,18 @@ const Post = ({ pageContext }) => {
 	}
 	return (
 		<Layout>
-			<Seo title={post.title} />
+			<Seo title={post.title}>
+				<script type="application/ld+json">
+					{`{
+				"@context": "https://schema.org/",
+				"@type": "Thing",
+				"name": ${post.title},
+				"image": ${featuredImageUrl},
+				"description": ${post.excerpt},
+				"url": /${post.slug}/
+				}`}
+				</script>
+			</Seo>
 			<Article>
 				{post.featuredImage && <FeaturedImage image={featuredImageUrl} alt={post.title} />}
 				<Title>{post.title}</Title>

@@ -42,10 +42,10 @@ const Line = styled.div`
 const Profile = ({ data }) => {
 	return (
 		<>
-			<ProfileWrapper itemscope itemtype="http://schema.org/Person">
-				<Photo itemprop="image" image={getImage(data.photo)} alt={data.site.siteMetadata.author} />
-				<ProfileName itemprop="name">{data.site.siteMetadata.author}</ProfileName>
-				<ProfileDescription itemprop="description">{data.site.siteMetadata.descriptionAuthor}</ProfileDescription>
+			<ProfileWrapper>
+				<Photo image={getImage(data.photo)} alt={data.site.siteMetadata.author} />
+				<ProfileName>{data.site.siteMetadata.author}</ProfileName>
+				<ProfileDescription>{data.site.siteMetadata.descriptionAuthor}</ProfileDescription>
 				<Line />
 			</ProfileWrapper>
 		</>

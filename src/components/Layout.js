@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
 import { HeaderNav, Header, Footer, Sidebar, Main, Container, Config } from './';
 import styled from 'styled-components';
+import { getImage } from 'gatsby-plugin-image';
 import 'normalize.css';
 import '@wordpress/block-library/build-style/style.css';
 import './layout.css';
@@ -91,6 +92,15 @@ const Layout = ({ children }) => {
 	`);
 	return (
 		<>
+			<script type="application/ld+json">
+				{`{
+				"@context": "https://schema.org/",
+				"@type": "Person",
+				"name": ${data.site.siteMetadata.author},
+				"image": ${getImage(data.photo)},
+				"description": ${data.site.siteMetadata.descriptionAuthor} 
+				}`}
+			</script>
 			<Container>
 				<HeaderNav data={data} />
 			</Container>

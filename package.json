@@ -2,7 +2,7 @@
   "name": "gatsby-starter-default",
   "private": true,
   "description": "",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "author": "Urij Horuzij",
   "dependencies": {
     "@apollo/client": "^3.3.21",
@@ -10,6 +10,7 @@
     "apollo-boost": "^0.4.9",
     "babel-plugin-styled-components": "^1.13.3",
     "gatsby": "^4.1.4",
+    "gatsby-plugin-amp": "^0.2.2",
     "gatsby-plugin-apollo": "^3.0.2",
     "gatsby-plugin-image": "^2.1.2",
     "gatsby-plugin-manifest": "^4.1.3",

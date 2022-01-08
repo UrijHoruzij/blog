@@ -84,29 +84,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 			},
 		});
 	});
-	result.data.wpgraphql.posts.nodes.forEach((node) => {
-		const pathPost = `${node.slug}/amp`;
-		createPage({
-			path: pathPost,
-			component: blogPostTemplate,
-			context: {
-				post: node,
-			},
-		});
-	});
 	const blogPageTemplate = path.resolve(`./src/templates/page/index.js`);
 	result.data.wpgraphql.pages.nodes.forEach((node) => {
 		const pathPage = node.slug;
-		createPage({
-			path: pathPage,
-			component: blogPageTemplate,
-			context: {
-				page: node,
-			},
-		});
-	});
-	result.data.wpgraphql.pages.nodes.forEach((node) => {
-		const pathPage = `${node.slug}/amp`;
 		createPage({
 			path: pathPage,
 			component: blogPageTemplate,

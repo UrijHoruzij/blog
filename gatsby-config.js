@@ -40,6 +40,16 @@ module.exports = {
 			},
 		},
 		`gatsby-plugin-sitemap`,
+		{
+			resolve: `gatsby-plugin-amp`,
+			options: {
+				canonicalBaseUrl: 'https://elenahoruzaya.netlify.app/',
+				components: ['amp-img'],
+				excludedPaths: ['/404*', '/'],
+				pathIdentifier: '/amp/',
+				relAmpHtmlPattern: '{{canonicalBaseUrl}}{{pathname}}{{pathIdentifier}}',
+			},
+		},
 		`gatsby-plugin-robots-txt`,
 	],
 };

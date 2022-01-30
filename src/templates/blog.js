@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Layout, Seo, Cards, Pagination } from '../components/';
 
 const IndexPage = ({ pageContext }) => {
-	const { posts, numPages, currentPage } = pageContext;
+	const { posts, numPages, currentPage, postsLength, postsPerPage } = pageContext;
 	return (
 		<>
 			<Layout>

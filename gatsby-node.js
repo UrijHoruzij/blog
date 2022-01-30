@@ -68,6 +68,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 			context: {
 				posts: postsPage[i],
 				numPages,
+				postsLength: posts.length,
+				postsPerPage,
 				currentPage: i + 1,
 			},
 		});

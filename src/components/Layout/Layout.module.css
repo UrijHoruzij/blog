@@ -1,0 +1,88 @@
+@font-face {
+	font-family: 'Caveat';
+	src: local('Caveat Regular'), local('Caveat-Regular'), url('../fonts/Caveatregular.woff2') format('woff2'),
+		url('../fonts/Caveatregular.woff') format('woff'), url('../fonts/Caveatregular.ttf') format('truetype');
+	font-weight: 400;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'PT Sans';
+	src: local('PT Sans'), local('PTSans-Regular'), url('../fonts/ptsans.woff2') format('woff2'),
+		url('../fonts/ptsans.woff') format('woff'), url('../fonts/ptsans.ttf') format('truetype');
+	font-weight: 400;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'PT Sans';
+	src: local('PT Sans Bold'), local('PTSans-Bold'), url('../fonts/ptsansbold.woff2') format('woff2'),
+		url('../fonts/ptsansbold.woff') format('woff'), url('../fonts/ptsansbold.ttf') format('truetype');
+	font-weight: 700;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'PT Serif';
+	src: local('PT Serif'), local('PTSerif-Regular'), url('../fonts/ptserif.woff2') format('woff2'),
+		url('../fonts/ptserif.woff') format('woff'), url('../fonts/ptserif.ttf') format('truetype');
+	font-weight: 400;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'PT Serif';
+	src: local('PT Serif Bold'), local('PTSerif-Bold'), url('../fonts/ptserifbold.woff2') format('woff2'),
+		url('../fonts/ptserifbold.woff') format('woff'), url('../fonts/ptserifbold.ttf') format('truetype');
+	font-weight: 700;
+	font-style: normal;
+}
+.wrapper {
+	display: grid;
+	grid-template-areas: 'main sidebar';
+	grid-template-rows: 1fr;
+	grid-template-columns: 8fr 4fr;
+	grid-gap: 16px;
+	margin-top: 24px;
+	overflow-x: hidden;
+}
+
+@media (min-width: 0) {
+	.wrapper {
+		grid-template-areas:
+			'main'
+			'sidebar';
+		grid-template-columns: 12fr;
+	}
+}
+@media (min-width: 576px) {
+	.wrapper {
+		grid-template-areas:
+			'main'
+			'sidebar';
+		grid-template-columns: 12fr;
+	}
+}
+
+@media (min-width: 768px) {
+	.wrapper {
+		grid-template-areas:
+			'main'
+			'sidebar';
+		grid-template-columns: 12fr;
+	}
+}
+@media (min-width: 992px) {
+	.wrapper {
+		grid-template-areas: 'main sidebar';
+		grid-template-columns: 8fr 4fr;
+	}
+}
+@media (min-width: 1200px) {
+	.wrapper {
+		grid-template-areas: 'main sidebar';
+		grid-template-columns: 8fr 4fr;
+	}
+}
+@media (min-width: 1400px) {
+	.wrapper {
+		grid-template-areas: 'main sidebar';
+		grid-template-columns: 8fr 4fr;
+	}
+}

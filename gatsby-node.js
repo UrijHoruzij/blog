@@ -61,6 +61,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 	for (let j = 0; j < numPages; j++) {
 		postsPage[j] = posts.slice(j * postsPerPage, j * postsPerPage + postsPerPage);
 	}
+	const pageSize = postsPerPage;
 	Array.from({ length: numPages }).forEach((_, i) => {
 		createPage({
 			path: i === 0 ? `/` : `/page/${i + 1}`,
@@ -68,8 +69,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 			context: {
 				posts: postsPage[i],
 				numPages,
-				postsLength: posts.length,
-				postsPerPage,
+				totalCount: posts.length,
+				pageSize,
 				currentPage: i + 1,
 			},
 		});

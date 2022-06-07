@@ -1,95 +1,27 @@
 import React from 'react';
-import { Link } from 'gatsby';
-import styled from 'styled-components';
-import { Config } from './';
+import { navigate } from 'gatsby';
+import PaginationComponent from './Pagination/';
+import * as styles from './Pagination.module.css';
 
-const PaginationWrapper = styled.div`
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	margin-bottom: 40px;
-`;
-const CurrentPage = styled.div`
-	box-sizing: border-box;
-	width: 32px;
-	height: 32px;
-	margin-right: 8px;
-	background-color: ${Config.grey};
-	font-family: ${Config.fontSerif};
-	font-size: 18px;
-	font-weight: 400;
-	color: ${Config.black};
-	line-height: 24px;
-	border-radius: 100%;
-	border: 1px solid ${Config.black};
-	display: flex;
-	justify-content: center;
-	align-items: center;
-`;
-const PaginationLink = styled(Link)`
-	box-sizing: border-box;
-	text-decoration: none;
-	width: 32px;
-	height: 32px;
-	background-color: ${Config.grey};
-	margin-right: 8px;
-	font-family: ${Config.fontSerif};
-	font-size: 18px;
-	font-weight: 400;
-	color: ${Config.black};
-	line-height: 24px;
-	border-radius: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	transition: all 0.3s ease-in-out;
-	&:hover {
-		border: 1px solid ${Config.black};
-	}
-`;
-
-const range = (from, to, step = 1) => {
-	let i = from;
-	const range = [];
-	while (i <= to) {
-		range.push(i);
-		i += step;
-	}
-	return range;
-};
-const Pagination = ({ numPages, currentPage }) => {
-	if (numPages <= 1) return null;
-	let items = range(1, numPages);
-	let startIndex = currentPage - 2 - 1;
-	let endIndex = currentPage + 2;
-	if (currentPage - 2 <= 1) {
-		startIndex = 0;
-	}
-	if (currentPage + 2 >= numPages) {
-		endIndex = numPages;
-	}
-
-	let nav = items.slice(startIndex, endIndex);
+const Pagination = ({ currentPage, pageSize, totalCount }) => {
+	const checkPage = (page) => {
+		if (page === currentPage) return;
+		if (page === 1) {
+			navigate('/');
+		} else {
+			navigate(`/page/${page}`);
+		}
+	};
 	return (
-		<PaginationWrapper>
-			{nav.map((i) => {
-				if (i === currentPage) {
-					return <CurrentPage key={`pagination-number${i}`}>{i}</CurrentPage>;
-				}
-				if (i === 1) {
-					return (
-						<PaginationLink key={`pagination-number${i}`} to={`/`}>
-							{i}
-						</PaginationLink>
-					);
-				}
-				return (
-					<PaginationLink key={`pagination-number${i}`} to={`/page/${i}`}>
-						{i}
-					</PaginationLink>
-				);
-			})}
-		</PaginationWrapper>
+		<div className={styles.wrapper}>
+			<PaginationComponent
+				currentPage={currentPage}
+				totalCount={totalCount}
+				pageSize={pageSize}
+				arrowShow
+				onPageChange={(page) => checkPage(page)}
+			/>
+		</div>
 	);
 };
 

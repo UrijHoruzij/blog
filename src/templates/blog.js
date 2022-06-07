@@ -2,15 +2,13 @@ import * as React from 'react';
 import { Layout, Seo, Cards, Pagination } from '../components/';
 
 const IndexPage = ({ pageContext }) => {
-	const { posts, numPages, currentPage, postsLength, postsPerPage } = pageContext;
+	const { posts, currentPage, totalCount, pageSize } = pageContext;
 	return (
-		<>
-			<Layout>
-				<Seo title="Главная" />
-				<Cards posts={posts} />
-				<Pagination numPages={numPages} currentPage={currentPage} />
-			</Layout>
-		</>
+		<Layout>
+			<Seo title="Главная" />
+			<Cards posts={posts} />
+			<Pagination totalCount={totalCount} pageSize={pageSize} currentPage={currentPage} />
+		</Layout>
 	);
 };
 

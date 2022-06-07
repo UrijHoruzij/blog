@@ -1,0 +1,131 @@
+.headerWrapper {
+	display: flex;
+	flex-direction: column;
+	max-height: 100%;
+}
+.desktopWrapper {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	min-height: 58px;
+}
+.mobileWrapper {
+	display: none;
+}
+.logo {
+	text-decoration: none;
+	font-family: var(--font-logo);
+	font-size: 24px;
+	font-weight: 400;
+	line-height: 30px;
+	color: var(--black);
+}
+.headerMenu {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+}
+.menuItem {
+	list-style: none;
+	padding-left: 36px;
+}
+.menuLink {
+	text-decoration: none;
+	font-family: var(--font-sans);
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 24px;
+	color: var(--black);
+	transition: all 0.3s ease-in-out;
+}
+.menuLink:hover {
+	text-decoration: underline;
+	color: var(--black);
+}
+.hamburger {
+	display: none;
+	position: relative;
+}
+.hamburgerOpen {
+	display: flex;
+}
+.hamburgerLine {
+	width: 32px;
+	height: 2px;
+	background-color: var(--black);
+}
+.hamburgerLineOpen:nth-child(1) {
+	position: absolute;
+	transform: rotate(45deg) translateY(16px);
+}
+.hamburgerLineOpen:nth-child(2) {
+	display: none;
+}
+.hamburgerLine:nth-child(2) {
+	display: block;
+}
+.hamburgerLineOpen:nth-child(3) {
+	position: absolute;
+	transform: rotate(-45deg) translateX(-16px);
+}
+.mobileMenu {
+	display: none;
+	flex-direction: column;
+	align-items: center;
+	transition: all 0.3s ease-in-out;
+}
+.mobileMenuOpen {
+	display: flex;
+}
+.mobileMenuItem {
+	list-style: none;
+	padding-top: 12px;
+	padding-bottom: 12px;
+}
+.mobileMenuLink {
+	text-decoration: none;
+	font-family: var(--font-sans);
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 24px;
+	color: var(--black);
+	transition: all 0.3s ease-in-out;
+}
+.mobileMenuLink:hover {
+	text-decoration: underline;
+	color: var(--black);
+}
+@media (min-width: 0) {
+	.headerWrapper {
+		margin: auto 8px;
+	}
+	.mobileWrapper {
+		display: block;
+	}
+	.headerMenu {
+		display: none;
+	}
+	.hamburger {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		flex-direction: column;
+		height: 24px;
+	}
+}
+@media (min-width: 576px) {
+	.headerWrapper {
+		margin: 0;
+	}
+}
+@media (min-width: 992px) {
+	.mobileWrapper {
+		display: none;
+	}
+	.headerMenu {
+		display: flex;
+	}
+	.hamburger {
+		display: none;
+	}
+}

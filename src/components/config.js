@@ -1,12 +1,4 @@
 const Config = {
-	grey: '#eaeaea',
-	darkgrey: '#C4C4C4',
-	black: '#333333',
-	orange: '#9b2b11',
-	fontLogo: 'Caveat',
-	fontSans: 'PT Sans',
-	fontSerif: 'PT Serif',
-
 	container: {
 		sm: `max-width: 540px;`,
 		md: `max-width: 720px;`,

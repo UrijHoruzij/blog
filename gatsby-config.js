@@ -3,7 +3,7 @@ module.exports = {
 		title: `Елена Хоружая`,
 		description: `Личный сайт учителя физики Хоружей Елены Степановны.`,
 		author: `Елена Хоружая`,
-		descriptionAuthor: 'учитель физики высшей квалификационной категории, старший учитель',
+		descriptionAuthor: 'учитель физики высшей квалификационной категории, учитель методист',
 		siteUrl: 'https://elenahoruzaya.netlify.app/',
 	},
 	plugins: [
@@ -29,7 +29,6 @@ module.exports = {
 				icon: `src/images/favicon.png`,
 			},
 		},
-		`gatsby-plugin-styled-components`,
 		`gatsby-plugin-offline`,
 		{
 			resolve: 'gatsby-source-graphql',

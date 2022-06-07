@@ -1,52 +1,12 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
-import { HeaderNav, Header, Footer, Sidebar, Main, Container, Config } from './';
-import styled from 'styled-components';
+import { HeaderNav, Header, Footer, Sidebar, Main, Container } from '../';
 import { getImage } from 'gatsby-plugin-image';
 import 'normalize.css';
 import '@wordpress/block-library/build-style/style.css';
-import './layout.css';
-
-const Wrapper = styled.div`
-	display: grid;
-	grid-template-areas: 'main sidebar';
-	grid-template-rows: 1fr;
-	grid-template-columns: 8fr 4fr;
-	grid-gap: 16px;
-	margin-top: 24px;
-	overflow-x: hidden;
-	@media ${Config.breakpoints.xs} {
-		grid-template-areas:
-			'main'
-			'sidebar';
-		grid-template-columns: 12fr;
-	}
-	@media ${Config.breakpoints.sm} {
-		grid-template-areas:
-			'main'
-			'sidebar';
-		grid-template-columns: 12fr;
-	}
-	@media ${Config.breakpoints.md} {
-		grid-template-areas:
-			'main'
-			'sidebar';
-		grid-template-columns: 12fr;
-	}
-	@media ${Config.breakpoints.lg} {
-		grid-template-areas: 'main sidebar';
-		grid-template-columns: 8fr 4fr;
-	}
-	@media ${Config.breakpoints.xl} {
-		grid-template-areas: 'main sidebar';
-		grid-template-columns: 8fr 4fr;
-	}
-	@media ${Config.breakpoints.xxl} {
-		grid-template-areas: 'main sidebar';
-		grid-template-columns: 8fr 4fr;
-	}
-`;
+import * as styles from './Layout.module.css';
+import * as theme from '../theme/light.module.css';
 
 const Layout = ({ children }) => {
 	const data = useStaticQuery(graphql`
@@ -91,7 +51,7 @@ const Layout = ({ children }) => {
 		}
 	`);
 	return (
-		<>
+		<div className={theme.root}>
 			<script type="application/ld+json">
 				{`{
 				"@context": "https://schema.org/",
@@ -106,13 +66,13 @@ const Layout = ({ children }) => {
 			</Container>
 			<Header data={data} />
 			<Container>
-				<Wrapper>
+				<div className={styles.wrapper}>
 					<Main>{children}</Main>
 					<Sidebar data={data} />
-				</Wrapper>
+				</div>
 			</Container>
 			<Footer siteTitle={data.site.siteMetadata.author} />
-		</>
+		</div>
 	);
 };
 

@@ -7,7 +7,7 @@ import * as styles from '../Global.module.css';
 
 const Post = ({ pageContext }) => {
 	const { post } = pageContext;
-	let featuredImageUrl;
+	let featuredImageUrl = '';
 	if (post.featuredImage) {
 		featuredImageUrl = getImage(post.featuredImage.node.imageFile);
 	}

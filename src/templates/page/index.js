@@ -6,7 +6,7 @@ import * as styles from '../Global.module.css';
 
 const Page = ({ pageContext }) => {
 	const { page } = pageContext;
-	let featuredImageUrl;
+	let featuredImageUrl = '';
 	if (page.featuredImage) {
 		featuredImageUrl = getImage(page.featuredImage.node.imageFile);
 	}
